@@ -24,7 +24,9 @@ const SPACE_DELIMITER = "SPACE";
 const DELIMITER_WIDTH = 2;
 
 export function resolveText(text) {
-  const [mainTopic, ...lines] = text.split("\n").filter((line) => line.length);
+  const [mainTopic, ...lines] = text
+    .split("\n")
+    .filter((line) => line.trim().length);
   if (!mainTopic) {
     return;
   }
@@ -39,13 +41,18 @@ export function resolveText(text) {
   let targetedChapter = rootChapter;
   for (const line of lines) {
     const [spaces, topic] = line.split("-");
+    console.log("line", line, "topic", topic);
     const depth = spaces.length / DELIMITER_WIDTH;
-    const formattedLine = {
+    const formattedTopic = topic.trim();
+    const nodeState = resolveNodeState(formattedTopic);
+    console.log("formattedTopic", formattedTopic, nodeState);
+    const node = {
       id: ID(),
-      topic,
+      topic: formattedTopic,
       children: [],
+      style: resolveNodeStyle(nodeState),
     };
-    lastChapterByDepths[depth] = formattedLine;
+    lastChapterByDepths[depth] = node;
 
     // lorsque la profondeur change, le chapitre de référence change également
     if (lastDepth !== depth) {
@@ -53,7 +60,7 @@ export function resolveText(text) {
     }
 
     lastDepth = depth;
-    targetedChapter.children.push(formattedLine);
+    targetedChapter.children.push(node);
   }
 
   return {
@@ -66,5 +73,33 @@ function makeNode(text) {
     id: ID(),
     topic: text,
     children: [],
+  };
+}
+
+function resolveNodeState(topic) {
+  if (topic.startsWith("✔")) {
+    return "complete";
+  }
+
+  if (topic.startsWith("▶")) {
+    return "in_progress";
+  }
+
+  return "idle";
+}
+
+const colorMap = {
+  complete: "#9edc3e",
+  in_progress: "#cbbf6a",
+};
+
+function resolveNodeStyle(state) {
+  // no style to apply when idle
+  if (state === "idle") {
+    return;
+  }
+
+  return {
+    color: colorMap[state],
   };
 }

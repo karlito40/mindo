@@ -1,10 +1,10 @@
 import { createMind, resolveText, drawMind } from "./mindmap.js";
 
 const mind = createMind("#map", {
-  // draggable: false,
+  draggable: false,
   // contextMenu: false,
   // toolBar: false,
-  // keypress: false,
+  keypress: false,
 });
 
 const messageManager = {

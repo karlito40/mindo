@@ -1,26 +1,41 @@
 - Mindy
-  - debug 
-    - après fermeture d'une preview, il est impossible de la réouvrir
-  - MVP
-    - résolution dynamique des indentations
-      - (espace ou tab) + taille 
-        - vérifier si une api existe sinon dev
-    - initial rendering
-    - live update
-    - errors
-      - execution only on plain text
-      - format must be correct
+  - ▶ MVP
+    - ☐ User dependent
+      - ☐ résolution dynamique des indentations
+        - ☐ (espace ou tab) + taille 
+          - vérifier si une api existe sinon dev
+    - ✔ Rendering
+      - ✔ draw mind elixir
+      - ✔ initial rendering
+      - ✔ live update
+    - ▶ Status des taches
+      - convention
+        - color and emojis
+        - ✔ démarrer une tache
+        - ✔ finir une tache
+        - ✔ réinitialiser une tache
+      - ▶ shortcuts
+        - ☐ démarrer une tache
+        - ☐ finir une tache
+        - ☐ réinitialiser une tache
+        - ☐ créer une tache rapidement
+    - Gestion des erreurs
+      - ☐ format must be correct
+        - ☐ plain text
+        - ☐ or mindy extension
+        - ☐ line must contains tiret and indentations 
+    - Publication
+      - créer icon
+      - gif preview
+      - readme
   - Must Have
     - coloration syntaxique
-    - shortcut façon TODO
-      - toggle une tache
-        - FINIR
-        - RESET
+      - respecter le user thème 
     - barre de progession du projet
     - export image
-  - Deploy
-    - Icons
-    - Readme
-  - Future
+  - ☐ Debug
+    - ☐ impossible de réouvrir une preview fermée
+  - Futur
+  
 
   
