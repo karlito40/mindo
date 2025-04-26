@@ -29,18 +29,28 @@ export function showMindyView(context: vscode.ExtensionContext, editor: vscode.T
     return;
   }
 
-  const textToParse = findTextToParse(editor);
-  console.log("textToParse:", textToParse);
-
-  console.log("create panel for ", editor.document.fileName);
   const panel = makeMindyView(context, editor);
   addMindyView(editor, panel);
 
+  const textToParse = findTextToParse(editor);
+  drawMindmap(editor, textToParse || '');
+
   panel.onDidDispose(() => {
     console.log("webview closed", panel);
-    console.log("viewType closed =>", panel.viewType);
+    // TODO: it may be an error to do that as we can't reopen 
+    // the view now
     deleteMindyView(editor);
   });
+}
+
+export function drawMindmap(editor: vscode.TextEditor, text: string) {
+  const panel = getMindyView(editor);
+  if (panel) {
+    panel.webview.postMessage({
+      command: "draw",
+      text,
+    });
+  }
 }
 
 // prettier-ignore
@@ -63,10 +73,8 @@ function makeMindyView(context: vscode.ExtensionContext, editor: vscode.TextEdit
 
   panel.webview.html = createWebviewContent(
     context.extensionUri,
-    panel.webview
+    panel.webview,
   );
-
-  console.log('html', panel.webview.html);
 
   return panel;
 }
@@ -82,25 +90,11 @@ function createWebviewContent(
     webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "app.css")),
   ];
 
-  console.log(
-    "mindpath",
-    vscode.Uri.joinPath(
-      extensionUri,
-      "src",
-      "webview",
-      "mind-elixir-4.5.2.min.js"
-    )
-  );
-  console.log(
-    "webviepath",
-    vscode.Uri.joinPath(extensionUri, "src", "webview", "webview.js")
-  );
   const nonce = getNonce();
   const scripts = [
-    // prettier-ignore
-    // webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "mind-elixir-4.5.2.min.js")),
-    // prettier-ignore
-    webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "webview.js")),
+    webview.asWebviewUri(
+      vscode.Uri.joinPath(extensionUri, "src", "webview", "webview.js")
+    ),
   ];
 
   return `<!DOCTYPE html>
@@ -125,7 +119,7 @@ function createWebviewContent(
       </head>
       <body>
         <div id="map"></div>
-
+        
         ${scripts
           .map(
             (uri) =>

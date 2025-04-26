@@ -1,7 +1,7 @@
 {
   "name": "mindy",
   "displayName": "mindy",
-  "description": "handle your todos with a mindmap text file",
+  "description": "Your todos through a mindmap",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.99.0"

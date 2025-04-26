@@ -1,0 +1,26 @@
+- Mindy
+  - debug 
+    - après fermeture d'une preview, il est impossible de la réouvrir
+  - MVP
+    - résolution dynamique des indentations
+      - (espace ou tab) + taille 
+        - vérifier si une api existe sinon dev
+    - initial rendering
+    - live update
+    - errors
+      - execution only on plain text
+      - format must be correct
+  - Must Have
+    - coloration syntaxique
+    - shortcut façon TODO
+      - toggle une tache
+        - FINIR
+        - RESET
+    - barre de progession du projet
+    - export image
+  - Deploy
+    - Icons
+    - Readme
+  - Future
+
+  

@@ -1,14 +1,26 @@
-import MindElixir from "./mind-elixir-4.5.2.min.js";
+import { createMind, resolveText, drawMind } from "./mindmap.js";
 
-console.log("tototo");
-const mind = new MindElixir({
-  el: "#map",
-  // direction: MindElixir.LEFT,
-
-  draggable: false, // default true
-  contextMenu: false, // default true
-  toolBar: false, // default true
-  keypress: false, // default true
+const mind = createMind("#map", {
+  // draggable: false,
+  // contextMenu: false,
+  // toolBar: false,
+  // keypress: false,
 });
 
-mind.init(MindElixir.new("new topic"));
+const messageManager = {
+  draw({ text }) {
+    console.log("=> execute draw", { text });
+    const dataMind = resolveText(text);
+    dataMind && drawMind(mind, dataMind);
+  },
+};
+
+window.addEventListener("message", (event) => {
+  console.log("mindy message received:", event);
+  const message = event.data; // The JSON data our extension sent
+  if (messageManager[message.command]) {
+    messageManager[message.command](message);
+  } else {
+    console.error(`Oops command ${message.command} not found`);
+  }
+});
