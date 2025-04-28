@@ -1,7 +1,7 @@
 {
   "name": "mindy",
   "displayName": "mindy",
-  "description": "Your todos through a mindmap",
+  "description": "Mindmap + TODOs = 🚀🔥",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.99.0"
@@ -12,10 +12,42 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "mindy",
+        "aliases": [
+          "Mindy"
+        ],
+        "extensions": [
+          "MINDY",
+          ".mindy"
+        ]
+      }
+    ],
     "commands": [
       {
+        "command": "mindy.createFile",
+        "title": "Mindy: Open"
+      },
+      {
         "command": "mindy.showView",
-        "title": "Show Mindy View"
+        "title": "Mindy: Show View",
+        "when": "editorLangId == mindy"
+      },
+      {
+        "command": "mindy.toggleTask",
+        "title": "Toggle Mindy Task",
+        "when": "editorLangId == mindy"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "mindy.toggleTask",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && editorLangId == mindy",
+        "linux": "ctrl+enter",
+        "mac": "cmd+enter",
+        "win": "ctrl+enter"
       }
     ]
   },
