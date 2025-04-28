@@ -35,6 +35,9 @@
     - ☐ barre de progession global
       - ☐ reprendre design figma (old project)
     - ☐ export image
+    - ☐ move webview to typescript build
+      - build
+      - so sharing code will be easier (no js fil)
   - ☐ Debug
     - ☐ impossible de réouvrir une preview fermée
     - ☐ pourquoi l'expand ne s'affiche pas 

@@ -39,6 +39,7 @@ function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEd
     {
       enableScripts: true,
       localResourceRoots: [
+        vscode.Uri.file(path.join(context.extensionPath, "src", "shared")),
         vscode.Uri.file(path.join(context.extensionPath, "src", "webview")),
         vscode.Uri.file(path.join(context.extensionPath, "media")),
       ],

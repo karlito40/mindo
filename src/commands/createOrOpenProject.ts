@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { doesFileExists } from "../utils";
-import { Command } from "../constants";
+import { Command } from "../shared/constants";
 
 // TODO: Use custom user indentation
 const defaultFileText = `- Chocolate Milk
@@ -14,23 +14,30 @@ const defaultFileText = `- Chocolate Milk
 - ☐ Enjoy`;
 
 export async function createOrOpenProject() {
+  const firstWorkspaceFolder = vscode.workspace.workspaceFolders?.[0];
   const activeEditor = vscode.window.activeTextEditor;
-  if (!activeEditor) {
-    return vscode.window.showErrorMessage(
-      "No active editor found. Cannot create mindy file"
-    );
-  }
-  const workingWorkspace = vscode.workspace.getWorkspaceFolder(
-    activeEditor.document.uri
-  );
-  if (!workingWorkspace) {
-    return vscode.window.showErrorMessage(
-      "No active workspace found. Cannot create mindy file"
-    );
+  const workingWorkspaceFolder =
+    activeEditor &&
+    vscode.workspace.getWorkspaceFolder(activeEditor.document.uri);
+
+  const targetedWorkpaceFolder = workingWorkspaceFolder || firstWorkspaceFolder;
+  if (!targetedWorkpaceFolder) {
+    if (!activeEditor) {
+      return vscode.window.showErrorMessage(
+        "No active editor found. Cannot create mindy file"
+      );
+    }
+
+    if (!workingWorkspaceFolder) {
+      return vscode.window.showErrorMessage(
+        "No active workspace found. Cannot create mindy file"
+      );
+    }
+    return vscode.window.showErrorMessage("Oops. An unknow errr happened");
   }
 
   const content = Buffer.from(defaultFileText);
-  const uri = vscode.Uri.file(workingWorkspace.uri.fsPath + "/MINDY");
+  const uri = vscode.Uri.file(targetedWorkpaceFolder.uri.fsPath + "/MINDY");
 
   const hasFile = await doesFileExists(uri);
   if (!hasFile) {

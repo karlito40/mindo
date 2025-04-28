@@ -1,4 +1,6 @@
 import MindElixir from "./mind-elixir-4.5.2.min.js";
+import { resolveTaskState } from "../shared/resolveTaskState.js";
+import { getTaskConfig } from "../shared/config.js";
 
 let currentId = 0;
 const ID = () => String(++currentId);
@@ -20,6 +22,7 @@ function isInitialized(mind) {
   return Boolean(mind.getData().nodeData);
 }
 
+// TODO: use user setting
 const SPACE_DELIMITER = "SPACE";
 const DELIMITER_WIDTH = 2;
 
@@ -41,16 +44,17 @@ export function resolveText(text) {
   let targetedChapter = rootChapter;
   for (const line of lines) {
     const [spaces, topic] = line.split("-");
-    console.log("line", line, "topic", topic);
     const depth = spaces.length / DELIMITER_WIDTH;
     const formattedTopic = topic.trim();
-    const nodeState = resolveNodeState(formattedTopic);
-    console.log("formattedTopic", formattedTopic, nodeState);
+    const taskState = resolveTaskState(formattedTopic);
+    const taskConfig = getTaskConfig(taskState);
     const node = {
       id: ID(),
       topic: formattedTopic,
       children: [],
-      style: resolveNodeStyle(nodeState),
+      style: taskConfig.color && {
+        color: taskConfig.color,
+      },
     };
     lastChapterByDepths[depth] = node;
 
@@ -73,33 +77,5 @@ function makeNode(text) {
     id: ID(),
     topic: text,
     children: [],
-  };
-}
-
-function resolveNodeState(topic) {
-  if (topic.startsWith("✔")) {
-    return "complete";
-  }
-
-  if (topic.startsWith("▶")) {
-    return "in_progress";
-  }
-
-  return "idle";
-}
-
-const colorMap = {
-  complete: "#9edc3e",
-  in_progress: "#cbbf6a",
-};
-
-function resolveNodeStyle(state) {
-  // no style to apply when idle
-  if (state === "idle") {
-    return;
-  }
-
-  return {
-    color: colorMap[state],
   };
 }
