@@ -1,60 +1,34 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import { getNonce } from "./utils";
+import { getNonce } from "../utils";
+import { deleteMindyView, hasMindyView, saveMindyView } from "./__manager";
+import { drawMindmap } from "./drawMindmap";
 
-const mindyViews = new Map();
-
-export function hasMindyView(editor: vscode.TextEditor) {
-  return mindyViews.has(editor);
-}
-
-export function saveMindyView(
-  editor: vscode.TextEditor,
-  view: vscode.WebviewPanel
+export function showMindyView(
+  context: vscode.ExtensionContext,
+  editor: vscode.TextEditor
 ) {
-  return mindyViews.set(editor, view);
-}
-export function deleteMindyView(editor: vscode.TextEditor) {
-  mindyViews.delete(editor);
-}
-
-export function getMindyView(editor: vscode.TextEditor): vscode.WebviewPanel {
-  return mindyViews.get(editor);
-}
-
-// prettier-ignore
-export function showMindyView(context: vscode.ExtensionContext, editor: vscode.TextEditor) {
   // nothing to do. The view is already create
   if (hasMindyView(editor)) {
     return;
   }
 
-  const panel = makeMindyView(context, editor);
+  const panel = createPanelView(context, editor);
   saveMindyView(editor, panel);
 
   const textToParse = findTextToParse(editor);
-  drawMindmap(editor, textToParse || '');
+  drawMindmap(editor, textToParse || "");
 
   panel.onDidDispose(() => {
     console.log("webview closed", panel);
-    // TODO: it may be an error to do that as we can't reopen 
+    // TODO: it may be an error to do that as we can't reopen
     // the view now
     deleteMindyView(editor);
   });
 }
 
-export function drawMindmap(editor: vscode.TextEditor, text: string) {
-  const panel = getMindyView(editor);
-  if (panel) {
-    panel.webview.postMessage({
-      command: "draw",
-      text,
-    });
-  }
-}
-
 // prettier-ignore
-function makeMindyView(context: vscode.ExtensionContext, editor: vscode.TextEditor) {
+function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEditor) {
   const panel = vscode.window.createWebviewPanel(
     "mindy.webview",
     `Mindy ${editor.document.fileName}`,
@@ -79,10 +53,8 @@ function makeMindyView(context: vscode.ExtensionContext, editor: vscode.TextEdit
   return panel;
 }
 
-function createWebviewContent(
-  extensionUri: vscode.Uri,
-  webview: vscode.Webview
-) {
+// prettier-ignore
+function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview) {
   const styles = [
     // prettier-ignore
     webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "reset.css")),

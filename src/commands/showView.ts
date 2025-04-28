@@ -1,9 +1,8 @@
 import * as vscode from "vscode";
-import { showMindyView } from "../mindy";
-import { findFirstVisibleEditor } from "../utils";
+import { findMindyTextEditor, showMindyView } from "../mindy";
 
 export function showView(context: vscode.ExtensionContext) {
-  const editor = findFirstVisibleEditor();
+  const editor = findMindyTextEditor();
   if (!editor) {
     return vscode.window.showErrorMessage("No file to render");
   }
