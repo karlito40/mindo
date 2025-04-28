@@ -8,7 +8,7 @@ export function hasMindyView(editor: vscode.TextEditor) {
   return mindyViews.has(editor);
 }
 
-export function addMindyView(
+export function saveMindyView(
   editor: vscode.TextEditor,
   view: vscode.WebviewPanel
 ) {
@@ -30,7 +30,7 @@ export function showMindyView(context: vscode.ExtensionContext, editor: vscode.T
   }
 
   const panel = makeMindyView(context, editor);
-  addMindyView(editor, panel);
+  saveMindyView(editor, panel);
 
   const textToParse = findTextToParse(editor);
   drawMindmap(editor, textToParse || '');

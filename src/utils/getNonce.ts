@@ -1,11 +1,3 @@
-import * as vscode from "vscode";
-
-export function findFirstVisibleEditor() {
-  return vscode.window.visibleTextEditors.find(
-    (e) => e.viewColumn === vscode.ViewColumn.One
-  );
-}
-
 export function getNonce() {
   let text = "";
   const possible =

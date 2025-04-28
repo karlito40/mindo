@@ -8,9 +8,10 @@
       - ✔ draw mind elixir
       - ✔ initial rendering
       - ✔ live update
+      - Reduce the root node size (mainly the font size)
     - ▶ Status des taches
       - convention
-        - color and emojis
+        - ✔ color and emojis
         - ✔ démarrer une tache
         - ✔ finir une tache
         - ✔ réinitialiser une tache

@@ -26,7 +26,7 @@
     ],
     "commands": [
       {
-        "command": "mindy.createFile",
+        "command": "mindy.createOrOpenProject",
         "title": "Mindy: Open"
       },
       {
@@ -36,7 +36,7 @@
       },
       {
         "command": "mindy.toggleTask",
-        "title": "Toggle Mindy Task",
+        "title": "Mindy: Toggle Task",
         "when": "editorLangId == mindy"
       }
     ],
