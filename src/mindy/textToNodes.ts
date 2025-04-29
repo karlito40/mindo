@@ -1,5 +1,5 @@
 import { __ctask } from "../config";
-import { resolveTaskState } from "../utils/resolveTaskState";
+import { resolveTaskState } from "./resolveTaskState";
 
 let currentId = 0;
 const ID = () => String(++currentId);

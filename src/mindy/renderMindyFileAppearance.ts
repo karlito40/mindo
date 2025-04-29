@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { TaskState } from "../constants";
 import { config } from "../config";
 import { isMindyEditor } from "./isMindyEditor";
-import { resolveTaskState } from "../utils/resolveTaskState";
+import { resolveTaskState } from "./resolveTaskState";
 
 const decorations: Record<string, vscode.TextEditorDecorationType> = {
   [TaskState.DONE]: vscode.window.createTextEditorDecorationType({
