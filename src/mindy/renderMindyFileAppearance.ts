@@ -1,7 +1,8 @@
 import * as vscode from "vscode";
-import { TaskState, MINDY_LANG_ID } from "../shared/constants.js";
+import { TaskState } from "../shared/constants.js";
 import { config } from "../shared/config.js";
 import { resolveTaskState } from "../shared/resolveTaskState.js";
+import { isMindyEditor } from "./isMindyEditor";
 
 const decorations: Record<string, vscode.TextEditorDecorationType> = {
   [TaskState.DONE]: vscode.window.createTextEditorDecorationType({
@@ -15,14 +16,11 @@ const decorations: Record<string, vscode.TextEditorDecorationType> = {
 };
 
 export function renderMindyFileAppearance(editor?: vscode.TextEditor) {
-  if (!editor) {
+  if (!editor || !isMindyEditor(editor)) {
     return;
   }
 
   const { document } = editor;
-  if (document.languageId !== MINDY_LANG_ID) {
-    return;
-  }
 
   const rangesByState: Record<string, vscode.Range[]> = {
     [TaskState.DONE]: [],
@@ -34,11 +32,6 @@ export function renderMindyFileAppearance(editor?: vscode.TextEditor) {
     const textLine = document.getText(range);
     const state = resolveDecorationState(textLine);
     rangesByState[state].push(range);
-    // const decoration = resolveDecoration(textLine);
-
-    // if (decoration) {
-    //   editor.setDecorations(decoration, [range]);
-    // }
   }
 
   for (const [state, ranges] of Object.entries(rangesByState)) {

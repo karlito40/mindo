@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { renderMindyFileAppearance } from "../mindy";
+import { renderMindyFileAppearance } from "../../mindy";
 
 export function decorateFile({ subscriptions }: vscode.ExtensionContext) {
   if (vscode.window.activeTextEditor) {

@@ -1,9 +1,7 @@
-import { MINDY_LANG_ID } from "../shared/constants";
 import { findFirstVisibleEditor } from "../utils";
+import { isMindyEditor } from "./isMindyEditor";
 
 export function findMindyTextEditor() {
   const firstEditor = findFirstVisibleEditor();
-  return firstEditor?.document.languageId === MINDY_LANG_ID
-    ? firstEditor
-    : null;
+  return isMindyEditor(firstEditor) ? firstEditor : null;
 }

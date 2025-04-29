@@ -9,12 +9,12 @@ export const config = {
       identifier: "✔",
     },
     [TaskState.IN_PROGRESS]: {
-      color: "#cbbf6a",
+      color: "#66d9ef",
       identifier: "▶",
     },
     [TaskState.IDLE]: {
       color: null,
-      identifier: null,
+      identifier: "☐",
     },
   },
 };

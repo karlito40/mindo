@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
-import { doesFileExists } from "../utils";
-import { Command } from "../shared/constants";
+import { doesFileExists } from "../../utils";
+import { Command } from "../../shared/constants";
 
 // TODO: Use custom user indentation
 const defaultFileText = `- Chocolate Milk

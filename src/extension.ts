@@ -1,18 +1,17 @@
 import * as vscode from "vscode";
 
 import { Command } from "./shared/constants.js";
-import { createOrOpenProject } from "./commands/createOrOpenProject";
-import { showView } from "./commands/showView";
-import { toggleTask } from "./commands/toggleTask";
-import { textToMindmap } from "./middlewares/textToMindmap";
-import { decorateFile } from "./middlewares/decorateFile";
+import { createOrOpenProject } from "./app/commands/createOrOpenProject";
+import { showView } from "./app/commands/showView";
+import { toggleTask } from "./app/commands/toggleTask";
+import { textToMindmap } from "./app/bindings/textToMindmap";
+import { decorateFile } from "./app/bindings/decorateFile";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "mindy" is now active!');
 
-  const middlewares = [decorateFile, textToMindmap];
-
-  middlewares.forEach((middleware) => middleware(context));
+  const bindings = [decorateFile, textToMindmap];
+  bindings.forEach((binding) => binding(context));
 
   const commands = [
     // prettier-ignore

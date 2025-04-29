@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { debounce } from "lodash-es";
-import { drawMindmap, findMindyTextEditor } from "../mindy";
+import { drawMindmap, findMindyTextEditor } from "../../mindy";
 
 export function textToMindmap({ subscriptions }: vscode.ExtensionContext) {
   // prettier-ignore

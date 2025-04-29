@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { findMindyTextEditor, showMindyView } from "../mindy";
+import { findMindyTextEditor, showMindyView } from "../../mindy";
 
 export function showView(context: vscode.ExtensionContext) {
   // TODO: il faudrait mieux prendre l'active editor !
