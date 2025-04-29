@@ -31,7 +31,7 @@ export function renderMindyFileAppearance(editor?: vscode.TextEditor) {
     const { range } = document.lineAt(i);
     const textLine = document.getText(range);
     const state = resolveDecorationState(textLine);
-    rangesByState[state].push(range);
+    rangesByState[state]?.push(range);
   }
 
   for (const [state, ranges] of Object.entries(rangesByState)) {

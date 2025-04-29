@@ -40,6 +40,14 @@
         "command": "mindy.toggleTask",
         "title": "Mindy: Toggle Task",
         "when": "editorLangId == mindy"
+      },
+      {
+        "command": "mindy.toggleStart",
+        "title": "Mindy: Toggle Start"
+      },
+      {
+        "command": "mindy.toggleDone",
+        "title": "Mindy: Toggle Done"
       }
     ],
     "keybindings": [
@@ -50,6 +58,16 @@
         "linux": "ctrl+enter",
         "mac": "cmd+enter",
         "win": "ctrl+enter"
+      },
+      {
+        "command": "mindy.toggleStart",
+        "key": "Alt+s",
+        "when": "editorTextFocus && editorLangId == mindy"
+      },
+      {
+        "command": "mindy.toggleDone",
+        "key": "Alt+d",
+        "when": "editorTextFocus && editorLangId == mindy"
       }
     ]
   },

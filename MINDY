@@ -16,10 +16,10 @@
         - ✔ finir une tache
         - ✔ réinitialiser une tache
       - ▶ shortcuts
-        - ☐ démarrer une tache
-        - ☐ finir une tache
-        - ☐ réinitialiser une tache
-        - ☐ créer une tache rapidement
+        - ✔ démarrer une tache
+        - ✔ finir une tache
+        - ✔ réinitialiser une tache
+        - ✔ créer une tache rapidement
     - Gestion des erreurs
       - ☐ format must be correct
         - ☐ plain text
@@ -29,18 +29,20 @@
       - ☐ créer icon
       - ☐ gif preview
       - ☐ readme
+  - Refactor
+    - ☐ only use typescript
+      - ☐ move webview to ts
+      - ☐ move shared to ts
+      - requires build tool
   - ☐ Must Have
     - ☐ coloration syntaxique
       - ☐ respecter le user thème 
     - ☐ barre de progession global
       - ☐ reprendre design figma (old project)
     - ☐ export image
-    - ☐ move webview to typescript build
-      - build
-      - so sharing code will be easier (no js fil)
   - ☐ Debug
     - ☐ impossible de réouvrir une preview fermée
-    - ☐ pourquoi l'expand ne s'affiche pas 
+    - ☐ pourquoi l'expand mindy ne s'affiche pas 
       - mais bien présent et fonctionnel...
   - ☐ Futur
     - ☐ Light theme

@@ -4,3 +4,4 @@ export { hasMindyView } from "./__manager";
 export { findMindyTextEditor } from "./findMindyTextEditor";
 export { renderMindyFileAppearance } from "./renderMindyFileAppearance";
 export { isMindyEditor } from "./isMindyEditor";
+export { toggleStateLine } from "./toggleStateLine";

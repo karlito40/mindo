@@ -19,6 +19,15 @@ export const config = {
   },
 };
 
+export const taskConfigs = Object.entries(config.tasks).map(
+  ([state, taskConfig]) => {
+    return {
+      ...taskConfig,
+      state,
+    };
+  }
+);
+
 export function getTaskConfig(state) {
   return config.tasks[state];
 }
