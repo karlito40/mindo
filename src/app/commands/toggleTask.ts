@@ -1,8 +1,8 @@
-import { TaskState } from "../../shared/constants.js";
-import { getTaskConfig } from "../../shared/config.js";
+import { TaskState } from "../../constants";
+import { __ctask } from "../../config";
 import { toggleStateOnActiveLine } from "./toggleStateOnActiveLine";
 
 export function toggleTask() {
-  const idleIdentifier = getTaskConfig(TaskState.IDLE).identifier;
-  return toggleStateOnActiveLine(idleIdentifier);
+  const { identifier } = __ctask(TaskState.IDLE);
+  return toggleStateOnActiveLine(identifier);
 }

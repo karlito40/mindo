@@ -8,14 +8,14 @@
       - ✔ draw mind elixir
       - ✔ initial rendering
       - ✔ live update
-      - Reduce the root node size (mainly the font size)
+      - Reduce root node size (mainly the font size)
     - ▶ Status des taches
       - convention
         - ✔ color and emojis
         - ✔ démarrer une tache
         - ✔ finir une tache
         - ✔ réinitialiser une tache
-      - ▶ shortcuts
+      - ✔ shortcuts
         - ✔ démarrer une tache
         - ✔ finir une tache
         - ✔ réinitialiser une tache
@@ -29,20 +29,15 @@
       - ☐ créer icon
       - ☐ gif preview
       - ☐ readme
-  - Refactor
-    - ☐ only use typescript
-      - ☐ move webview to ts
-      - ☐ move shared to ts
-      - requires build tool
   - ☐ Must Have
-    - ☐ coloration syntaxique
-      - ☐ respecter le user thème 
+    - ▶ coloration syntaxique
+      - ✔ dark theme 
+      - ☐ light theme
     - ☐ barre de progession global
-      - ☐ reprendre design figma (old project)
     - ☐ export image
   - ☐ Debug
     - ☐ impossible de réouvrir une preview fermée
-    - ☐ pourquoi l'expand mindy ne s'affiche pas 
+    - ☐ l'expand mindy ne s'affiche pas 
       - mais bien présent et fonctionnel...
   - ☐ Futur
     - ☐ Light theme

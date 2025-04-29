@@ -1,5 +1,4 @@
-// File shared between extension and webview
-import { TaskState } from "./constants.js";
+import { TaskState } from "./constants";
 
 // TODO: light and dark theme
 export const config = {
@@ -28,6 +27,6 @@ export const taskConfigs = Object.entries(config.tasks).map(
   }
 );
 
-export function getTaskConfig(state) {
+export function __ctask(state: TaskState) {
   return config.tasks[state];
 }

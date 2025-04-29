@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-import { Command } from "./shared/constants.js";
+import { Command } from "./constants";
 import { createOrOpenProject } from "./app/commands/createOrOpenProject";
 import { showView } from "./app/commands/showView";
 import { toggleTask } from "./app/commands/toggleTask";

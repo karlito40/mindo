@@ -1,4 +1,4 @@
-import { createMind, resolveText, drawMind } from "./mindmap.js";
+import { createMind, drawMind } from "./mindmap.js";
 
 const mind = createMind("#map", {
   draggable: false,
@@ -8,11 +8,14 @@ const mind = createMind("#map", {
 });
 
 const messageManager = {
-  draw({ text }) {
-    console.log("=> execute draw", { text });
-    const dataMind = resolveText(text);
+  draw({ dataMind }) {
     dataMind && drawMind(mind, dataMind);
   },
+  // draw({ text }) {
+  //   console.log("=> execute draw", { text });
+  //   const dataMind = resolveText(text);
+  //   dataMind && drawMind(mind, dataMind);
+  // },
 };
 
 window.addEventListener("message", (event) => {

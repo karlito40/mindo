@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { taskConfigs } from "../shared/config.js";
+import { taskConfigs } from "../config";
 
 export function toggleStateLine(
   line: vscode.TextLine,

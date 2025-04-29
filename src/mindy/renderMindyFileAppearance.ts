@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
-import { TaskState } from "../shared/constants.js";
-import { config } from "../shared/config.js";
-import { resolveTaskState } from "../shared/resolveTaskState.js";
+import { TaskState } from "../constants";
+import { config } from "../config";
 import { isMindyEditor } from "./isMindyEditor";
+import { resolveTaskState } from "../utils/resolveTaskState";
 
 const decorations: Record<string, vscode.TextEditorDecorationType> = {
   [TaskState.DONE]: vscode.window.createTextEditorDecorationType({
