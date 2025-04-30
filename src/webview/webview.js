@@ -2,7 +2,7 @@ import { createMind, drawMind } from "./mindmap.js";
 
 const mind = createMind("#map", {
   draggable: false,
-  // contextMenu: false,
+  contextMenu: false,
   // toolBar: false,
   keypress: false,
 });
@@ -10,12 +10,9 @@ const mind = createMind("#map", {
 const messageManager = {
   draw({ dataMind }) {
     dataMind && drawMind(mind, dataMind);
+    // TODO: alignment should follow the mindmap direction
+    forceLeftAlignment();
   },
-  // draw({ text }) {
-  //   console.log("=> execute draw", { text });
-  //   const dataMind = resolveText(text);
-  //   dataMind && drawMind(mind, dataMind);
-  // },
 };
 
 window.addEventListener("message", (event) => {
@@ -27,3 +24,14 @@ window.addEventListener("message", (event) => {
     console.error(`Oops command ${message.command} not found`);
   }
 });
+
+function forceLeftAlignment() {
+  const mindmap = document.querySelector(".main-node-container");
+  const rootNode = document.querySelector("me-root");
+  if (mindmap && rootNode) {
+    const rootRect = rootNode.getBoundingClientRect();
+    const leftPadding = 60;
+    const offsetX = window.innerWidth / 2 - rootRect.width / 2 - leftPadding;
+    mindmap.style.transform = `translateX(-${offsetX}px)`;
+  }
+}

@@ -7,11 +7,6 @@ export function textToMindmap({ subscriptions }: vscode.ExtensionContext) {
   vscode.workspace.onDidChangeTextDocument(debounce((event) => {
     renderTasks(event.document);
   }, 300), null, subscriptions);
-
-  // prettier-ignore
-  vscode.window.onDidChangeActiveTextEditor((event) => {
-    event && renderTasks(event.document);
-  }, null, subscriptions);
 }
 
 function renderTasks(targetedDocument: vscode.TextDocument) {

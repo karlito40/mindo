@@ -10,7 +10,8 @@
       - ✔ draw mind elixir
       - ✔ initial rendering
       - ✔ live update
-      - Lower root node size (mainly the font size)
+      - ☐ Lower root node size (mainly the font size)
+      - Use themable api instead of css override
     - ▶ Status des taches
       - convention
         - ✔ color and emojis

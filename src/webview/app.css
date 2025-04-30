@@ -6,3 +6,12 @@ html, body {
   height: 100vh;
   width: 100%;
 }
+
+.map-container .map-canvas me-root me-tpc {
+  font-size: inherit !important;
+  padding: 8px 15px !important;
+}
+
+.map-container me-main>me-wrapper>me-parent>me-tpc {
+  padding: 8px 22px !important;
+}
