@@ -4,7 +4,11 @@ import { resolveTaskState } from "./resolveTaskState";
 let currentId = 0;
 const ID = () => String(++currentId);
 
-// TODO: use user setting
+// TODO: Use custom user indentation instead
+// const config = vscode.workspace.getConfiguration('editor');
+// const tabSize = config.get<number>('tabSize');
+// const insertSpaces = config.get<boolean>('insertSpaces');
+
 const SPACE_DELIMITER = "SPACE";
 const DELIMITER_WIDTH = 2;
 

@@ -3,6 +3,9 @@ import { doesFileExists } from "../../utils";
 import { Command } from "../../constants";
 
 // TODO: Use custom user indentation
+// const config = vscode.workspace.getConfiguration('editor');
+// const tabSize = config.get<number>('tabSize');
+// const insertSpaces = config.get<boolean>('insertSpaces');
 const defaultFileText = `- Chocolate Milk
 - ✔ Watch tutorial
 - ▶ Recipe

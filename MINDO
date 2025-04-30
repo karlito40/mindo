@@ -3,12 +3,14 @@
     - ☐ User dependent
       - ☐ résolution dynamique des indentations
         - ☐ (espace ou tab) + taille 
-          - vérifier si une api existe sinon dev
+          - const config = vscode.workspace.getConfiguration('editor');
+          - const tabSize = config.get<number>('tabSize');
+          - const insertSpaces = config.get<boolean>('insertSpaces');
     - ✔ Rendering
       - ✔ draw mind elixir
       - ✔ initial rendering
       - ✔ live update
-      - Reduce root node size (mainly the font size)
+      - Lower root node size (mainly the font size)
     - ▶ Status des taches
       - convention
         - ✔ color and emojis
@@ -29,14 +31,14 @@
       - ☐ créer icon
       - ☐ gif preview
       - ☐ readme
-  - ☐ Must Have
+  - ▶ Must Have
     - ▶ coloration syntaxique
       - ✔ dark theme 
       - ☐ light theme
     - ☐ barre de progession global
     - ☐ export image
-  - ☐ Debug
-    - ☐ impossible de réouvrir une preview fermée
+  - ▶ Debug
+    - ✔ impossible de réouvrir une preview fermée
     - ☐ l'expand mindo ne s'affiche pas 
       - mais bien présent et fonctionnel...
   - ☐ Futur
