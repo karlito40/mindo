@@ -10,7 +10,7 @@ import { decorateFile } from "./app/bindings/decorateFile";
 import { toggleDone } from "./app/commands/toggleDone";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Congratulations, your extension "mindy" is now active!');
+  console.log('Congratulations, your extension "mindo" is now active!');
 
   // prettier-ignore
   bindings(context, [

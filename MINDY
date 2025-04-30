@@ -1,4 +1,4 @@
-- Mindy
+- Mindo
   - ▶ MVP
     - ☐ User dependent
       - ☐ résolution dynamique des indentations
@@ -23,7 +23,7 @@
     - Gestion des erreurs
       - ☐ format must be correct
         - ☐ plain text
-        - ☐ or mindy extension
+        - ☐ or mindo extension
         - ☐ line must contains tiret and indentations 
     - ☐ Publication
       - ☐ créer icon
@@ -37,7 +37,7 @@
     - ☐ export image
   - ☐ Debug
     - ☐ impossible de réouvrir une preview fermée
-    - ☐ l'expand mindy ne s'affiche pas 
+    - ☐ l'expand mindo ne s'affiche pas 
       - mais bien présent et fonctionnel...
   - ☐ Futur
     - ☐ Light theme

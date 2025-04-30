@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
-import { isMindyEditor, toggleStateLine } from "../../mindy";
+import { isMindoEditor, toggleStateLine } from "../../mindo";
 
 export function toggleStateOnActiveLine(stateIdentifier: string) {
   const editor = vscode.window.activeTextEditor;
-  if (!editor || !isMindyEditor(editor)) {
+  if (!editor || !isMindoEditor(editor)) {
     return;
   }
 

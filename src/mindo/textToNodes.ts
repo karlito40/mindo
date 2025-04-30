@@ -54,12 +54,12 @@ export function textToNodes(text: string) {
   };
 }
 
-type MindyNode = {
+type MindoNode = {
   id: string;
   topic: string;
-  children: MindyNode[];
+  children: MindoNode[];
 };
-function makeNode(text: string): MindyNode {
+function makeNode(text: string): MindoNode {
   return {
     id: ID(),
     topic: text,

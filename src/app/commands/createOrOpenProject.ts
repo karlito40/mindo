@@ -24,20 +24,20 @@ export async function createOrOpenProject() {
   if (!targetedWorkpaceFolder) {
     if (!activeEditor) {
       return vscode.window.showErrorMessage(
-        "No active editor found. Cannot create mindy file"
+        "No active editor found. Cannot create mindo file"
       );
     }
 
     if (!workingWorkspaceFolder) {
       return vscode.window.showErrorMessage(
-        "No active workspace found. Cannot create mindy file"
+        "No active workspace found. Cannot create mindo file"
       );
     }
     return vscode.window.showErrorMessage("Oops. An unknow errr happened");
   }
 
   const content = Buffer.from(defaultFileText);
-  const uri = vscode.Uri.file(targetedWorkpaceFolder.uri.fsPath + "/MINDY");
+  const uri = vscode.Uri.file(targetedWorkpaceFolder.uri.fsPath + "/MINDO");
 
   const hasFile = await doesFileExists(uri);
   if (!hasFile) {

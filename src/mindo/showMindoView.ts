@@ -1,20 +1,20 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import { getNonce } from "../utils";
-import { deleteMindyView, hasMindyView, saveMindyView } from "./__manager";
+import { deleteMindoView, hasMindoView, saveMindoView } from "./__manager";
 import { drawMindmap } from "./drawMindmap";
 
-export function showMindyView(
+export function showMindoView(
   context: vscode.ExtensionContext,
   editor: vscode.TextEditor
 ) {
   // nothing to do. The view is already create
-  if (hasMindyView(editor)) {
+  if (hasMindoView(editor)) {
     return;
   }
 
   const panel = createPanelView(context, editor);
-  saveMindyView(editor, panel);
+  saveMindoView(editor, panel);
 
   const textToParse = findTextToParse(editor);
   drawMindmap(editor, textToParse || "");
@@ -23,15 +23,15 @@ export function showMindyView(
     console.log("webview closed", panel);
     // TODO: it may be an error to do that as we can't reopen
     // the view now
-    deleteMindyView(editor);
+    deleteMindoView(editor);
   });
 }
 
 // prettier-ignore
 function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEditor) {
   const panel = vscode.window.createWebviewPanel(
-    "mindy.webview",
-    `Mindy ${editor.document.fileName}`,
+    "mindo.webview",
+    `Mindo ${editor.document.fileName}`,
     {
       viewColumn: vscode.ViewColumn.Two,
       preserveFocus: true,
@@ -87,7 +87,7 @@ function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview)
           .map((uri) => `<link href="${uri}" rel="stylesheet">`)
           .join(" ")}
         
-        <title>Mindy</title>
+        <title>Mindo</title>
       </head>
       <body>
         <div id="map"></div>

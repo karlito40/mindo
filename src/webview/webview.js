@@ -19,7 +19,7 @@ const messageManager = {
 };
 
 window.addEventListener("message", (event) => {
-  console.log("mindy message received:", event);
+  console.log("mindo message received:", event);
   const message = event.data; // The JSON data our extension sent
   if (messageManager[message.command]) {
     messageManager[message.command](message);

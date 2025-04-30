@@ -1,9 +1,9 @@
 export enum Command {
-  CREATE_OR_OPEN_PROJECT = "mindy.createOrOpenProject",
-  SHOW_VIEW = "mindy.showView",
-  TOGGLE_TASK = "mindy.toggleTask",
-  TOGGLE_START = "mindy.toggleStart",
-  TOGGLE_DONE = "mindy.toggleDone",
+  CREATE_OR_OPEN_PROJECT = "mindo.createOrOpenProject",
+  SHOW_VIEW = "mindo.showView",
+  TOGGLE_TASK = "mindo.toggleTask",
+  TOGGLE_START = "mindo.toggleStart",
+  TOGGLE_DONE = "mindo.toggleDone",
 }
 
 export enum TaskState {
@@ -12,4 +12,4 @@ export enum TaskState {
   IDLE = "IDLE",
 }
 
-export const MINDY_LANG_ID = "mindy";
+export const MINDO_LANG_ID = "mindo";

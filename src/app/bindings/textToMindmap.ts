@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { debounce } from "lodash-es";
-import { drawMindmap, findMindyTextEditor } from "../../mindy";
+import { drawMindmap, findMindoTextEditor } from "../../mindo";
 
 export function textToMindmap({ subscriptions }: vscode.ExtensionContext) {
   // prettier-ignore
@@ -10,7 +10,7 @@ export function textToMindmap({ subscriptions }: vscode.ExtensionContext) {
 }
 
 function renderTasks(targetedDocument: vscode.TextDocument) {
-  const editor = findMindyTextEditor();
+  const editor = findMindoTextEditor();
 
   if (editor?.document === targetedDocument) {
     const updatedText = editor.document.getText();

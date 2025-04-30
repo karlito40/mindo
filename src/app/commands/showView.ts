@@ -1,12 +1,12 @@
 import * as vscode from "vscode";
-import { findMindyTextEditor, showMindyView } from "../../mindy";
+import { findMindoTextEditor, showMindoView } from "../../mindo";
 
 export function showView(context: vscode.ExtensionContext) {
   // TODO: il faudrait mieux prendre l'active editor !
-  const editor = findMindyTextEditor();
+  const editor = findMindoTextEditor();
   if (!editor) {
     return vscode.window.showErrorMessage("No file to render");
   }
 
-  showMindyView(context, editor);
+  showMindoView(context, editor);
 }

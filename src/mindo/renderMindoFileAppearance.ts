@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { TaskState } from "../constants";
 import { config } from "../config";
-import { isMindyEditor } from "./isMindyEditor";
+import { isMindoEditor } from "./isMindoEditor";
 import { resolveTaskState } from "./resolveTaskState";
 
 const decorations: Record<string, vscode.TextEditorDecorationType> = {
@@ -15,8 +15,8 @@ const decorations: Record<string, vscode.TextEditorDecorationType> = {
   }),
 };
 
-export function renderMindyFileAppearance(editor?: vscode.TextEditor) {
-  if (!editor || !isMindyEditor(editor)) {
+export function renderMindoFileAppearance(editor?: vscode.TextEditor) {
+  if (!editor || !isMindoEditor(editor)) {
     return;
   }
 

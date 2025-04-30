@@ -1,6 +1,6 @@
 {
-  "name": "mindy",
-  "displayName": "mindy",
+  "name": "mindo",
+  "displayName": "mindo",
   "description": "Mindmap + TODOs = 🚀🔥",
   "version": "0.0.1",
   "engines": {
@@ -10,64 +10,64 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:mindy"
+    "onLanguage:mindo"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "languages": [
       {
-        "id": "mindy",
+        "id": "mindo",
         "aliases": [
-          "Mindy"
+          "Mindo"
         ],
         "extensions": [
-          "MINDY",
-          ".mindy"
+          "MINDO",
+          ".mindo"
         ]
       }
     ],
     "commands": [
       {
-        "command": "mindy.createOrOpenProject",
-        "title": "Mindy: Open"
+        "command": "mindo.createOrOpenProject",
+        "title": "Mindo: Open"
       },
       {
-        "command": "mindy.showView",
-        "title": "Mindy: Show View",
-        "when": "editorLangId == mindy"
+        "command": "mindo.showView",
+        "title": "Mindo: Show View",
+        "when": "editorLangId == mindo"
       },
       {
-        "command": "mindy.toggleTask",
-        "title": "Mindy: Toggle Task",
-        "when": "editorLangId == mindy"
+        "command": "mindo.toggleTask",
+        "title": "Mindo: Toggle Task",
+        "when": "editorLangId == mindo"
       },
       {
-        "command": "mindy.toggleStart",
-        "title": "Mindy: Toggle Start"
+        "command": "mindo.toggleStart",
+        "title": "Mindo: Toggle Start"
       },
       {
-        "command": "mindy.toggleDone",
-        "title": "Mindy: Toggle Done"
+        "command": "mindo.toggleDone",
+        "title": "Mindo: Toggle Done"
       }
     ],
     "keybindings": [
       {
-        "command": "mindy.toggleTask",
+        "command": "mindo.toggleTask",
         "key": "ctrl+enter",
-        "when": "editorTextFocus && editorLangId == mindy",
+        "when": "editorTextFocus && editorLangId == mindo",
         "linux": "ctrl+enter",
         "mac": "cmd+enter",
         "win": "ctrl+enter"
       },
       {
-        "command": "mindy.toggleStart",
+        "command": "mindo.toggleStart",
         "key": "Alt+s",
-        "when": "editorTextFocus && editorLangId == mindy"
+        "when": "editorTextFocus && editorLangId == mindo"
       },
       {
-        "command": "mindy.toggleDone",
+        "command": "mindo.toggleDone",
         "key": "Alt+d",
-        "when": "editorTextFocus && editorLangId == mindy"
+        "when": "editorTextFocus && editorLangId == mindo"
       }
     ]
   },
