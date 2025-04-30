@@ -1,6 +1,29 @@
-# mindo README
+# Mindo
 
-This is the README for your extension "mindo". After writing up a brief description, we recommend including the following sections.
+Organize your to-dos using a mind map file.
+
+As this one ⬇️
+```mindo
+- Welcomme
+  - ☐ Mindo
+    - As your typical vscode extension
+    - ▶ Test
+      - ☐ Execute command "> Mindo: Open"
+      - ☐ Shortcuts
+        - On Mac
+          - ☐ cmd + Enter to create a task (or revert)
+          - ☐ Option + s to start a task (or revert)
+          - ☐ Option + d to complete a task (or revert)
+        - On Windows/Linux/Others
+          - ☐ ctrl + Enter to create a task (or revert)
+          - ☐ Alt + s to start a task
+          - ☐ Alt + d to complete a task
+      - ☐ Live preview it
+        - ☐ Execute command "> Mindo: Show View"
+        - ☐ Check auto update on changes
+  - ✔ Enjoy your life
+  - And thanks
+```
 
 ## Features
 
@@ -11,21 +34,6 @@ For example if there is an image subfolder under your extension project workspac
 \!\[feature X\]\(images/feature-x.png\)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 

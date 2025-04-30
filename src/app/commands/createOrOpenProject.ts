@@ -6,15 +6,30 @@ import { Command } from "../../constants";
 // const config = vscode.workspace.getConfiguration('editor');
 // const tabSize = config.get<number>('tabSize');
 // const insertSpaces = config.get<boolean>('insertSpaces');
-const defaultFileText = `- Chocolate Milk
-- ✔ Watch tutorial
-- ▶ Recipe
-- ▶ Chocolate
-- ▶ Milk
-- ☐ Mix everything together
-  - Taste
-  - Add sugar if needed
-- ☐ Enjoy`;
+const defaultFileText = `- Welcome
+  - ☐ Mindo
+    - Organize your tasks
+    - ▶ Test
+      - ☐ Execute command "> Mindo: Open"
+      - ▶ Shortcuts
+        - On Mac
+          - ☐ cmd + Enter to create a task (or revert)
+          - ☐ Option + s to start a task (or revert)
+          - ☐ Option + d to complete a task (or revert)
+        - On Others
+          - ☐ ctrl + Enter to create a task (or revert)
+          - ☐ Alt + s to start a task
+          - ☐ Alt + d to complete a task
+      - ☐ Live preview it
+        - ☐ Execute command "> Mindo: Show View"
+        - ☐ Check auto update on changes
+  - ✔ Enjoy your life
+  - ▶ Support
+    - Ask me on github
+      - https://github.com/karlito40/mindo/issues
+    - Contributions are welcome
+    - ▶ Be kind
+  - And thanks`;
 
 export async function createOrOpenProject() {
   const firstWorkspaceFolder = vscode.workspace.workspaceFolders?.[0];
