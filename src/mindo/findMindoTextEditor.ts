@@ -1,7 +1,10 @@
-import { findFirstVisibleEditor } from "../utils";
+// import { findFirstVisibleEditor } from "../utils";
+import * as vscode from "vscode";
 import { isMindoEditor } from "./isMindoEditor";
+import { findFirstVisibleEditor } from "../utils";
 
 export function findMindoTextEditor() {
-  const firstEditor = findFirstVisibleEditor();
-  return isMindoEditor(firstEditor) ? firstEditor : null;
+  const activeEditor =
+    vscode.window.activeTextEditor || findFirstVisibleEditor();
+  return isMindoEditor(activeEditor) ? activeEditor : null;
 }

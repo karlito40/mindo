@@ -29,11 +29,14 @@ export function showMindoView(
 
 // prettier-ignore
 function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEditor) {
+  const fileName = getFilenameFromPath(editor.document.fileName);
+
+  const targetedColumn = editor.viewColumn ? editor.viewColumn + 1 : vscode.ViewColumn.Two;
   const panel = vscode.window.createWebviewPanel(
     "mindo.webview",
-    `Mindo ${editor.document.fileName}`,
+    `Mindo (${fileName})`,
     {
-      viewColumn: vscode.ViewColumn.Two,
+      viewColumn: targetedColumn,
       preserveFocus: true,
     },
     {
@@ -104,4 +107,9 @@ function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview)
 
 function findTextToParse(editor?: vscode.TextEditor) {
   return editor?.document.getText();
+}
+
+function getFilenameFromPath(path: string) {
+  const splits = path.split("/");
+  return splits[splits.length - 1];
 }
