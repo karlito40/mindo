@@ -1,79 +1,109 @@
 # Mindo
 
-Organize your to-dos using a mind map file.
+Organize your to-dos using a mind map file
 
-As this one ⬇️
-```mindo
-- Welcomme
+![Preview](./assets/demo.gif)
+
+## Features
+
+- **Portable**: The mindmap is handle through a simple plain text format. Make it easy to update its content for anyone (even without the extension)
+- **Fast management**: Shortcuts let you change a task's status directly within the file 
+- **Multiple**:  Create as many as Mindo file as you want
+- **Visual**: Mindo files update your mindmaps in real time
+
+## Tutorial
+
+You can create a mindo project using the command
+```
+> Mindo: Open
+```
+Or by creating it manually. In this case you have 2 options:
+- a file name `MINDO`
+- a file using the `.mindo` extension
+
+Next open the preview using
+```
+> Mindo: Show View
+```
+
+Update your file following Mindo format as described below. 
+And deep dive in our shortcut section to ease your task management.
+
+### Format 
+
+A mindo file follows some rules
+- `- my text`: Is a simple node with `my text` as label. Use it as additional information for example
+- `- ☐ xxx`: Is an idle task node with `xxx` as label
+- `- ▶ doing some works`: Is a started task node with `doing some works` as label
+- `- ✔ works done !`: Is a completed task node with `doing some works` as label
+
+**Children nodes** used **2 spaces** indentation more than their parents.
+
+**Working example**
+```
+- Welcome
   - ☐ Mindo
-    - As your typical vscode extension
+    - Organize your tasks
     - ▶ Test
       - ☐ Execute command "> Mindo: Open"
-      - ☐ Shortcuts
+      - ▶ Shortcuts
         - On Mac
           - ☐ cmd + Enter to create a task (or revert)
           - ☐ Option + s to start a task (or revert)
           - ☐ Option + d to complete a task (or revert)
-        - On Windows/Linux/Others
+        - On Others
           - ☐ ctrl + Enter to create a task (or revert)
           - ☐ Alt + s to start a task
           - ☐ Alt + d to complete a task
       - ☐ Live preview it
         - ☐ Execute command "> Mindo: Show View"
         - ☐ Check auto update on changes
+  - ▶ Support
+    - Ask me on github
+      - https://github.com/karlito40/mindo/issues
+    - Contributions are welcome
+    - ▶ Be kind
   - ✔ Enjoy your life
   - And thanks
 ```
 
-## Features
+### Commands & shortcuts
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+It adds 5 commands to the command palette:
 
-For example if there is an image subfolder under your extension project workspace:
+```js
+'Mindo: Open' // Open or create your main project's mindo file
+'Mindo: Show View' // Open the mindmap visualizer on the focus editor
+'Mindo: Toggle Task' // Create a task or transform it into a simple label
+'Mindo: Toggle Start' // Toggle task started symbol
+'Mindo: Toggle Done' // Toggle tasl done symbol
+```
 
-\!\[feature X\]\(images/feature-x.png\)
+It adds 4 shortcuts when editing a `Mindo` file:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```js
+'Cmd/Ctrl+Enter' // Triggers `Mindo: Toggle Task`
+'Alt+Enter' // Triggers `Mindo: Toggle Task`
+'Alt+D' // Triggers `Mindo: Toggle Done`
+'Alt+S' // Triggers `Mindp: Toggle Start`
+```
 
-## Known Issues
+## Demo
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+![Screenshot](./assets/screenshot.png)
+
+## Support
+
+Don't hesitate to fill issues on the github project [https://github.com/karlito40/mindo/issues](https://github.com/karlito40/mindo/issues). I will try my best to help. Also understand that our times is not infinite. And this project isn't vital for me. It serves my goal and i will happy if it's serve your too.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- **0.0.1** Initial release for my own needs
 
 ---
 
-## Following extension guidelines
+## Final
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+**Thanks & Enjoy!**
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+_Hope it serves you well as it does for me_

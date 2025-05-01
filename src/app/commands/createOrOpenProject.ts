@@ -23,12 +23,12 @@ const defaultFileText = `- Welcome
       - ☐ Live preview it
         - ☐ Execute command "> Mindo: Show View"
         - ☐ Check auto update on changes
-  - ✔ Enjoy your life
   - ▶ Support
     - Ask me on github
       - https://github.com/karlito40/mindo/issues
     - Contributions are welcome
     - ▶ Be kind
+  - ✔ Enjoy your life
   - And thanks`;
 
 export async function createOrOpenProject() {
