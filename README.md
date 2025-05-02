@@ -97,7 +97,7 @@ It adds 4 shortcuts when editing a `Mindo` file:
 
 ## Support
 
-Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/issues](https://github.com/karlito40/mindo/issues). I will try my best to help. Also understand that my time is not infinite. And this project isn't vital for me. It serves my goal well and i'm happy with it. But i will be happy if it serves your as well
+Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/issues](https://github.com/karlito40/mindo/issues). I will try my best to help.
 
 ## Release Notes
 
