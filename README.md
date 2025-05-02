@@ -101,8 +101,8 @@ Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/is
 
 ## Release Notes
 
-- **0.0.2** Add SVG export and force dark theme
-- **0.0.1** Initial release 
+- **0.1.0** Add SVG export and force dark theme
+- **0.0.0** Initial release 
 
 ---
 
