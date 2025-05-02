@@ -6,10 +6,11 @@ Organize your to-dos using a mind map file
 
 ## Features
 
-- **Portable**: The mindmap is handle through a simple plain text format. Make it easy to update its content for anyone (even without the extension)
+- **Portable**: Mindmaps are handle through a simple plain text format. Make it easy to update their content for anyone
 - **Fast management**: Shortcuts let you change a task's status directly within the file 
 - **Multiple**:  Create as many as Mindo file as you want
-- **Visual**: Mindo files update your mindmaps in real time
+- **Visual**: Mindmaps views are update in real time
+- **Exportable**: Export the generated mind map to SVG
 
 ## Tutorial
 
@@ -18,8 +19,8 @@ You can create a mindo project using the command
 > Mindo: Open
 ```
 Or by creating it manually. In this case you have 2 options:
-- a file name `MINDO`
-- a file using the `.mindo` extension
+- create a file name `MINDO`
+- create a file using the `.mindo` extension
 
 Next open the preview using
 ```
@@ -31,11 +32,13 @@ And deep dive in our shortcut section to ease your task management.
 
 ### Format 
 
-A mindo file follows some rules
-- `- my text`: Is a simple node with `my text` as label. Use it as additional information for example
-- `- ☐ xxx`: Is an idle task node with `xxx` as label
-- `- ▶ doing some works`: Is a started task node with `doing some works` as label
-- `- ✔ works done !`: Is a completed task node with `doing some works` as label
+A mindo file follows some rules.
+
+Use those symbols to create specific nodes:
+- `-` _follows by `your text`_: Generate a simple node text with _your text_ as label. Use it as additional information for example
+- `- ☐` _follows by `your text`_: Generate an idle task node with _your text_ as label
+- `- ▶` _follows by `your text`_: Geneate a started task node with _your text_ as label
+- `- ✔` _follows by `your text`: Generate a completed task node with _your text_ as label
 
 **Children nodes** used **2 spaces** indentation more than their parents.
 
@@ -75,8 +78,8 @@ It adds 5 commands to the command palette:
 'Mindo: Open' // Open or create your main project's mindo file
 'Mindo: Show View' // Open the mindmap visualizer on the focus editor
 'Mindo: Toggle Task' // Create a task or transform it into a simple label
-'Mindo: Toggle Start' // Toggle task started symbol
-'Mindo: Toggle Done' // Toggle tasl done symbol
+'Mindo: Toggle Start' // Toggle started symbol
+'Mindo: Toggle Done' // Toggle done symbol
 ```
 
 It adds 4 shortcuts when editing a `Mindo` file:
@@ -85,7 +88,7 @@ It adds 4 shortcuts when editing a `Mindo` file:
 'Cmd/Ctrl+Enter' // Triggers `Mindo: Toggle Task`
 'Alt+Enter' // Triggers `Mindo: Toggle Task`
 'Alt+D' // Triggers `Mindo: Toggle Done`
-'Alt+S' // Triggers `Mindp: Toggle Start`
+'Alt+S' // Triggers `Mindo: Toggle Start`
 ```
 
 ## Demo
@@ -94,11 +97,12 @@ It adds 4 shortcuts when editing a `Mindo` file:
 
 ## Support
 
-Don't hesitate to fill issues on the github project [https://github.com/karlito40/mindo/issues](https://github.com/karlito40/mindo/issues). I will try my best to help. Also understand that our times is not infinite. And this project isn't vital for me. It serves my goal and i will happy if it's serve your too.
+Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/issues](https://github.com/karlito40/mindo/issues). I will try my best to help. Also understand that my time is not infinite. And this project isn't vital for me. It serves my goal well and i'm happy with it. But i will be happy if it serves your as well
 
 ## Release Notes
 
-- **0.0.1** Initial release for my own needs
+- **0.0.2** Add SVG export and force dark theme
+- **0.0.1** Initial release 
 
 ---
 

@@ -1,5 +1,7 @@
 import { createMind, drawMind } from "./mindmap.js";
 
+document.querySelector(".export-btn").addEventListener("click", exportToSVG);
+
 const mind = createMind("#map", {
   draggable: false,
   contextMenu: false,
@@ -34,4 +36,18 @@ function forceLeftAlignment() {
     const offsetX = window.innerWidth / 2 - rootRect.width / 2 - leftPadding;
     mindmap.style.transform = `translateX(-${offsetX}px)`;
   }
+}
+
+async function exportToSVG() {
+  const blob = await mind.exportSvg(false);
+  if (!blob) {
+    return;
+  }
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "mindo-export.svg";
+  a.click();
+  URL.revokeObjectURL(url);
 }

@@ -20,9 +20,6 @@ export function showMindoView(
   drawMindmap(editor, textToParse || "");
 
   panel.onDidDispose(() => {
-    console.log("webview closed", panel);
-    // TODO: it may be an error to do that as we can't reopen
-    // the view now
     deleteMindoView(editor);
   });
 }
@@ -59,6 +56,7 @@ function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEd
 
 // prettier-ignore
 function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview) {
+  const downloadIconUri = webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "download.svg"));
   const styles = [
     // prettier-ignore
     webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "reset.css")),
@@ -95,6 +93,9 @@ function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview)
       </head>
       <body>
         <div id="map"></div>
+        <button class="export-btn">
+          <img src="${downloadIconUri}" alt="Download" title="SVG Export"/>
+        </button>  
         
         ${scripts
           .map(

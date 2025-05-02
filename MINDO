@@ -10,10 +10,10 @@
       - ✔ draw mind elixir
       - ✔ initial rendering
       - ✔ live update
-      - ☐ Lower root node size (mainly the font size)
+      - ✔ Lower node size root (mainly the font size)
       - Use themable api instead of css override
-    - ▶ Status des taches
-      - convention
+    - ✔ Status des taches
+      - ✔ convention
         - ✔ color and emojis
         - ✔ démarrer une tache
         - ✔ finir une tache
@@ -28,20 +28,22 @@
         - ☐ plain text
         - ☐ or mindo extension
         - ☐ line must contains tiret and indentations 
-    - ☐ Publication
-      - ☐ créer icon
-      - ☐ gif preview
+    - ✔ Publication
+      - ✔ créer icon
+      - ✔ gif preview
       - ☐ readme
   - ▶ Must Have
-    - ▶ coloration syntaxique
+    - ✔ coloration syntaxique
       - ✔ dark theme 
       - ☐ light theme
     - ☐ barre de progession global
-    - ☐ export image
+    - ▶ button to export as image
   - ▶ Debug
+    - ☐ Force dark theme for mindo
     - ✔ impossible de réouvrir une preview fermée
-    - ☐ l'expand mindo ne s'affiche pas 
-      - mais bien présent et fonctionnel...
+    - ☐ mind-elixiri expand button does not display 
+      - but still working...
+      - maybe an issue from the min.js version ?
   - ☐ Futur
     - ☐ Light theme
   
