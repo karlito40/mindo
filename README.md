@@ -38,7 +38,7 @@ A task is a text line prefix by the symbols below to handle their status ⤵️
 Mindo uses **indentation** to organize tasks: adding 2 more spaces than the parent task creates a new section in the mindmap preview
 
 **Working example** ⤵️
-```
+```javascript
 - Welcome
   - ☐ Mindo
     - Organize your tasks
