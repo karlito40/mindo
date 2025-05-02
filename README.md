@@ -1,48 +1,43 @@
 # Mindo
 
-Organize your to-dos using a mind map file
+Organize your to-dos using a simple plain text format. And preview as a mindmap
 
 ![Preview](./assets/demo.gif)
 
-## Features
+## ✨ Features
 
-- **Portable**: Mindmaps are handle through a simple plain text format. Make it easy to update their content for anyone
-- **Fast management**: Shortcuts let you change a task's status directly within the file 
-- **Multiple**:  Create as many as Mindo file as you want
-- **Visual**: Mindmaps views are update in real time
-- **Exportable**: Export the generated mind map to SVG or PNG
+- 📝 Manage your todos through a plain mindo text file 
+- 🧠 Update task status using a simple, easy-to-learn format — understandable in under a minute
+- 🌈 Syntax highlighting based on task status
+- ⚙️ Easy setup via command: `Mindo: Open`
+- 👁 Preview your tasks as a mindmap via command: `Mindo: Show View`. Changes update in realtime
+- 🖼 Export as PNG or SVG
+- 📁 Multiple .mindo file can be used in a single project
 
-## Tutorial
+#  🚀 Usage
 
-You can create a mindo project using the command
-```
-> Mindo: Open
-```
-Or by creating it manually. In this case you have 2 options:
-- create a file name `MINDO`
-- create a file using the `.mindo` extension
-
+1. Open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
+2. Run: `Mindo: Open` 
+- Or bypass these steps by creating a .mindo or MINDO file manually
+3. Create a task using `Alt+enter`. See the [shortcuts](#commands-and-shortcuts) section.
 Next open the preview using
-```
-> Mindo: Show View
-```
-
-Update your file following Mindo format as described below. 
-And deep dive in our shortcut section to ease your task management.
+4. Run: `Mindo: Show View` while focused on a Mindo file. The associated mindmap appear.
+5. Update your task inside the mindo file. Start one with `Alt+s` or complete one with `Alt+d` while focused on a line
+6. The mindmap should auto update at the same time
+7. That's it ! You are a now a Mindo master
 
 ### Format 
 
-A mindo file follows some rules.
+A task is a text line prefix by the symbols below to handle their status ⤵️
 
-Use those symbols to create specific nodes:
-- `-` + `your text`: Generate a simple node text with _your text_ as label. Use it as additional information for example
-- `- ☐` + `your text`: Generate an idle task node with _your text_ as label
-- `- ▶` + `your text`: Geneate a started task node with _your text_ as label
-- `- ✔` + `your text`: Generate a completed task node with _your text_ as label
+- `-` :  a simple text
+- `- ☐`: an idle task
+- `- ▶`: a started task
+- `- ✔`: a completed task
 
-**Children nodes** used **2 spaces** indentation more than their parents.
+Mindo uses **indentation** to organize tasks: adding 2 more spaces than the parent task creates a new section in the mindmap preview
 
-**Working example**
+**Working example** ⤵️
 ```
 - Welcome
   - ☐ Mindo
@@ -70,7 +65,7 @@ Use those symbols to create specific nodes:
   - And thanks
 ```
 
-### Commands & shortcuts
+### Commands and shortcuts
 
 It adds 5 commands to the command palette:
 
@@ -91,7 +86,7 @@ It adds 4 shortcuts when editing a `Mindo` file:
 'Alt+S' // Triggers `Mindo: Toggle Start`
 ```
 
-## Demo
+## Render Demo
 
 ![Screenshot](./assets/screenshot.png)
 
