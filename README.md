@@ -35,10 +35,10 @@ And deep dive in our shortcut section to ease your task management.
 A mindo file follows some rules.
 
 Use those symbols to create specific nodes:
-- `-` _follows by `your text`_: Generate a simple node text with _your text_ as label. Use it as additional information for example
-- `- ☐` _follows by `your text`_: Generate an idle task node with _your text_ as label
-- `- ▶` _follows by `your text`_: Geneate a started task node with _your text_ as label
-- `- ✔` _follows by `your text`: Generate a completed task node with _your text_ as label
+- `-` + `your text`: Generate a simple node text with _your text_ as label. Use it as additional information for example
+- `- ☐` + `your text`: Generate an idle task node with _your text_ as label
+- `- ▶` + `your text`: Geneate a started task node with _your text_ as label
+- `- ✔` + `your text`: Generate a completed task node with _your text_ as label
 
 **Children nodes** used **2 spaces** indentation more than their parents.
 
