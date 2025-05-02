@@ -23,3 +23,27 @@ export function drawMind(mind, data) {
 function isInitialized(mind) {
   return Boolean(mind.getData().nodeData);
 }
+
+export const exportToSvg = (mind) => exportToImage(mind, "svg");
+export const exportToPng = (mind) => exportToImage(mind, "png");
+
+export async function exportToImage(mind, type) {
+  if (!["png", "svg"].includes(type)) {
+    throw new Error(`Cannot export to ${type}. Unimplemented type`);
+  }
+
+  const blob =
+    type === "svg" ? await mind.exportSvg(false) : await mind.exportPng(false);
+  if (!blob) {
+    return;
+  }
+
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement("a"), {
+    href: url,
+    download: `mindo-export.${type}`,
+  });
+
+  a.click();
+  URL.revokeObjectURL(url);
+}

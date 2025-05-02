@@ -18,17 +18,37 @@ html, body {
   padding: 8px 22px !important;
 }
 
+.mind-elixir-toolbar.lb {
+  left: 7px;
+  bottom: 20px;
+}
+
+.mind-elixir-toolbar.export-toolbar {
+  background-color: #2d3748;
+  color: white;
+  padding: 0;
+}
+
 .export-btn {
-  position: fixed;
-  bottom: 1.3rem;
-  left: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   border-radius: 5px;
-  padding: 0.6rem 0.9rem;
-  background: #2d3748;
-  color: #ffffff;
+  padding: 0.3rem 0.7rem;
   font-family: var(--vscode-font-family);
-  box-shadow: 0 1px 2px #0003;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
+  margin-bottom: 0.3rem;
+  background: inherit;
+  color: inherit
+}
+
+.export-btn:last-child {
+  margin-bottom: 0;
+}
+
+.export-btn:hover {
+  background: #475369;
 }

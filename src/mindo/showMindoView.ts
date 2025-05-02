@@ -56,7 +56,6 @@ function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEd
 
 // prettier-ignore
 function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview) {
-  const downloadIconUri = webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "download.svg"));
   const styles = [
     // prettier-ignore
     webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "reset.css")),
@@ -80,7 +79,7 @@ function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview)
           http-equiv="Content-Security-Policy" 
           content="default-src 'none'; 
           style-src 'unsafe-inline' ${webview.cspSource}; 
-          img-src ${webview.cspSource} https:;
+          img-src ${webview.cspSource} https: data:;
           script-src 'nonce-${nonce}';"
         >
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,9 +92,14 @@ function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview)
       </head>
       <body>
         <div id="map"></div>
-        <button class="export-btn">
-          <img src="${downloadIconUri}" alt="Download" title="SVG Export"/>
-        </button>  
+        <div class="mind-elixir-toolbar lb export-toolbar">
+          <button class="export-btn" data-export-type="svg">
+            SVG
+          </button>  
+          <button class="export-btn" data-export-type="png">
+            PNG
+          </button>  
+        </div>
         
         ${scripts
           .map(

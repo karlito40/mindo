@@ -10,7 +10,7 @@ Organize your to-dos using a mind map file
 - **Fast management**: Shortcuts let you change a task's status directly within the file 
 - **Multiple**:  Create as many as Mindo file as you want
 - **Visual**: Mindmaps views are update in real time
-- **Exportable**: Export the generated mind map to SVG
+- **Exportable**: Export the generated mind map to SVG or PNG
 
 ## Tutorial
 
@@ -101,6 +101,7 @@ Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/is
 
 ## Release Notes
 
+- **0.2.0** Add PNG export
 - **0.1.0** Add SVG export and force dark theme
 - **0.0.0** Initial release 
 
