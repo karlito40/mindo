@@ -10,7 +10,7 @@ Organize your to-dos using a simple plain text format. And preview as a mindmap
 - 🧠 Update task status using a simple, easy-to-learn format — understandable in under a minute
 - 🌈 Syntax highlighting based on task status
 - ⚙️ Easy setup via command: `Mindo: Open`
-- 👁 Preview your tasks as a mindmap via command: `Mindo: Show View`. Changes update in realtime
+- 👁 Preview your tasks as a mindmap via command: `Mindo: Show View`
 - 🖼 Export as PNG or SVG
 - 📁 Multiple .mindo file can be used in a single project
 
@@ -19,16 +19,15 @@ Organize your to-dos using a simple plain text format. And preview as a mindmap
 1. Open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
 2. Run: `Mindo: Open` 
 - Or bypass these steps by creating a .mindo or MINDO file manually
-3. Create a task using `Alt+enter`. See the [shortcuts](#commands-and-shortcuts) section.
-Next open the preview using
-4. Run: `Mindo: Show View` while focused on a Mindo file. The associated mindmap appear.
+3. Create a task using `Alt+enter`. See the [shortcuts](#commands-and-shortcuts) section
+4. Run: `Mindo: Show View` while focused on a Mindo file. The associated mindmap appear
 5. Update your task inside the mindo file. Start one with `Alt+s` or complete one with `Alt+d` while focused on a line
 6. The mindmap should auto update at the same time
 7. That's it ! You are a now a Mindo master
 
 ### Format 
 
-A task is a text line prefix by the symbols below to handle their status ⤵️
+Symbols are used to control task statuses. Add one at the beginning of a line to update it ⤵️
 
 - `-` :  a simple text
 - `- ☐`: an idle task
