@@ -40,7 +40,7 @@ function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEd
       enableScripts: true,
       retainContextWhenHidden: true,
       localResourceRoots: [
-        vscode.Uri.file(path.join(context.extensionPath, "src", "webview")),
+        vscode.Uri.file(path.join(context.extensionPath, "webview")),
         vscode.Uri.file(path.join(context.extensionPath, "media")),
       ],
     }
@@ -58,15 +58,16 @@ function createPanelView(context: vscode.ExtensionContext, editor: vscode.TextEd
 function createWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webview) {
   const styles = [
     // prettier-ignore
-    webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "reset.css")),
+    webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "webview", "reset.css")),
     // prettier-ignore
-    webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "src", "webview", "app.css")),
+    webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "webview", "app.css")),
   ];
 
+  
   const nonce = getNonce();
   const scripts = [
     webview.asWebviewUri(
-      vscode.Uri.joinPath(extensionUri, "src", "webview", "webview.js")
+      vscode.Uri.joinPath(extensionUri, "webview", "webview.js")
     ),
   ];
 

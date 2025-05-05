@@ -95,6 +95,7 @@ Don't hesitate to fill an issue on github [https://github.com/karlito40/mindo/is
 
 ## Release Notes
 
+- **0.3.0** Fix webview not loading on production
 - **0.2.0** Add PNG export
 - **0.1.0** Add SVG export and force dark theme
 - **0.0.0** Initial release 
