@@ -1,6 +1,6 @@
 # Mindo
 
-Organize your to-dos using a simple plain text format. And preview as a mindmap
+Organize your to-dos using a simple plain text format and preview as a mindmap
 
 ![Preview](./assets/demo.gif)
 
