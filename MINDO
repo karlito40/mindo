@@ -1,4 +1,9 @@
 - Mindo
+  - ☐ Next
+    - ☐ Mindmap > 6 bases nodes
+      - should change to layout star
+    - ☐ Focus a text line on MINDO
+      - ☐ should focus the same mindmap node
   - ▶ MVP
     - ☐ User dependent
       - ☐ résolution dynamique des indentations
@@ -31,7 +36,7 @@
     - ✔ Publication
       - ✔ créer icon
       - ✔ gif preview
-      - ☐ readme
+      - ✔ readme
   - ▶ Must Have
     - ✔ coloration syntaxique
       - ✔ dark theme 
@@ -44,8 +49,7 @@
     - ☐ mind-elixiri expand button does not display 
       - but still working...
       - maybe an issue from the min.js version ?
-  - ☐ Futur
-    - ☐ Light theme
+
   
 
   
