@@ -12,6 +12,7 @@ html, body {
 .map-container .map-canvas me-root me-tpc {
   font-size: inherit !important;
   padding: 8px 15px !important;
+  border: 2px solid orange !important;
 }
 
 .map-container me-main>me-wrapper>me-parent>me-tpc {
@@ -51,4 +52,12 @@ html, body {
 
 .export-btn:hover {
   background: #475369;
+}
+
+#tbltl { 
+  display: none;
+}
+
+#tbltr {
+  margin-top: 0 !important;
 }

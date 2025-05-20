@@ -1,5 +1,11 @@
 import MindElixir from "./mind-elixir-4.5.2.min.js";
 
+export const MapDirection = {
+  LEFT: MindElixir.LEFT,
+  RIGHT: MindElixir.RIGHT,
+  SIDE: MindElixir.SIDE,
+};
+
 export function createMind(querySelector, options) {
   // we want to force dark_theme as we dont have time
   // to focus on light task color
@@ -10,6 +16,7 @@ export function createMind(querySelector, options) {
     // TODO: the favorite scenario should be to use
     // the user vscode theme preference (light or dark)
     theme: MindElixir.DARK_THEME,
+    direction: MindElixir.RIGHT,
     ...options,
   });
 
@@ -20,7 +27,7 @@ export function drawMind(mind, data) {
   return isInitialized(mind) ? mind.refresh(data) : mind.init(data);
 }
 
-function isInitialized(mind) {
+export function isInitialized(mind) {
   return Boolean(mind.getData().nodeData);
 }
 
